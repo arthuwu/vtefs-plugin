@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include "constants.hpp"
+#include "socket.hpp"
 
 using namespace std;
 using namespace EuroScopePlugIn;
@@ -16,6 +17,8 @@ public:
 
 	~TEFSPlugin();
 
+	virtual void InitSocket();
+
 	virtual void OnFlightPlanControllerAssignedDataUpdate(CFlightPlan FlightPlan, int DataType);
 
 	virtual void OnFlightPlanFlightPlanDataUpdate(CFlightPlan FlightPlan);
@@ -27,4 +30,10 @@ public:
 	virtual void OnTimer(int Count);
 
 	virtual void OnAirportRunwayActivityChanged();
+
+	virtual bool OnCompileCommand(const char* sCommandLine);
+private:
+	WebSocketManager* ws;
+
+	void SubTest();
 };

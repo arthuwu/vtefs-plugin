@@ -1,0 +1,9 @@
+{
+  "dependencies": [
+    {
+      "name": "ixwebsocket",
+      "default-features": false
+    },
+    "nlohmann-json"
+  ]
+}
