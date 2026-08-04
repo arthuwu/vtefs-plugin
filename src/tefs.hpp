@@ -14,23 +14,15 @@ class TEFSPlugin :
 {
 public:
 	TEFSPlugin();
-
 	~TEFSPlugin();
 
 	virtual void InitSocket();
-
 	virtual void OnFlightPlanControllerAssignedDataUpdate(CFlightPlan FlightPlan, int DataType);
-
 	virtual void OnFlightPlanFlightPlanDataUpdate(CFlightPlan FlightPlan);
-
 	virtual void OnFlightPlanDisconnect(CFlightPlan FlightPlan);
-
 	virtual void OnFlightPlanFlightStripPushed(CFlightPlan FlightPlan, const char* sSenderController, const char* sTargetController);
-
 	virtual void OnTimer(int Count);
-
 	virtual void OnAirportRunwayActivityChanged();
-
 	virtual bool OnCompileCommand(const char* sCommandLine);
 private:
 	WebSocketManager* ws;

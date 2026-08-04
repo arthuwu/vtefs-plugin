@@ -24,7 +24,6 @@ void TEFSPlugin::InitSocket() {
 	ws->Start();
 
 	ws->Subscribe("send_chat", [this](const std::string& rawMessage) {
-		OutputDebugStringA("called\n");
 		SubTest();
 		});
 }
